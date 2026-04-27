@@ -1,0 +1,102 @@
+body {
+  display: flex;
+  gap: 24px;
+  padding: 40px;
+  font-family: sans-serif;
+}
+
+/* Style the card container */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  width: 300px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Target image inside card only */
+.card > img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Style category and price */
+.category,
+.price {
+  font-size: 14px;
+  color: #888;
+}
+
+/* Style h2 differently */
+.card > h2 {
+  font-size: 18px;
+  color: #111;
+  margin: 8px 0;
+}
+
+/* Base — all stars */
+.stars span {
+  color: #ddd;
+}
+
+/* stars margin bottom */
+.stars {
+  margin-bottom: 6px;
+}
+
+/* Every star except first */
+.stars span + span {
+  color: blue;
+}
+
+/* Last star different color */
+.stars span:last-child {
+  color: red;
+}
+
+/* First star different color from rest */
+.stars span:first-child {
+  color: gold;
+}
+
+/* Sale badge only when inside pricing */
+.pricing .badge {
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* Price sibling — badge right after price */
+.price + .badge {
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+/* All buttons */
+.card button {
+  cursor: pointer;
+  background: #111;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* Disabled button style */
+.card button[disabled] {
+  cursor: not-allowed;
+  background: #ccc;
+  color: #888;
+}
+
+/* Hover effect on card */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
