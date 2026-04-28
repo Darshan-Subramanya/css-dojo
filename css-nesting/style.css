@@ -1,0 +1,57 @@
+.navbar {
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+
+    & .nav-links {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+
+  & .brand {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+  & .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+
+    & li {
+      &.active a {
+        color: hotpink;
+      }
+
+      &:first-child a {
+        color: gold;
+        font-size: 18px;
+      }
+
+      & + & {
+        margin-left: 8px;
+      }
+    }
+
+    & li a {
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        color: yellow;
+      }
+    }
+  }
+}
