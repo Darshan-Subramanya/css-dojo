@@ -1,0 +1,69 @@
+/* Base styles for all posts - low specificity base */
+.post {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 16px;
+  background: white;
+}
+
+/* Featured post stands out */
+.post.featured {
+  background: yellow;
+  border-color: orange;
+  border-width: 2px;
+}
+
+/* Draft post muted */
+.post.draft {
+  background: gray;
+  opacity: 0.6;
+  color: #fff;
+}
+
+/* Tag colors differ per topic */
+.tag[data-topic="css"] {
+  background: blue;
+}
+.tag[data-topic="javascript"] {
+  background: yellow;
+}
+.tag[data-topic="typescript"] {
+  background: dodgerblue;
+}
+
+/* Links in meta vs read-more different */
+/* base link style */
+a {
+  color: blue;
+}
+/* link inside meta */
+.meta a {
+  color: darkgreen;
+}
+/* read-more link */
+a.read-more {
+  color: rebeccapurple;
+}
+
+/* #blog override — force a style */
+/* class sets font size — (0,1,0) */
+.post {
+  font-size: 18px;
+}
+/* id overrides it — (1,0,0) wins */
+#blog .post {
+  font-size: 12px;
+}
+
+/* Use :where() for base link style */
+/* (0,0,0) — zero specificity */
+:where(a) {
+  color: hotpink;
+  font-style: italic;
+}
+/* (0,0,1) — wins easily */
+a {
+  color: blue;
+  font-style: normal;
+}

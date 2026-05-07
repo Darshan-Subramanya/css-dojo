@@ -6,10 +6,11 @@ Each folder is a mini project built while learning that topic — no frameworks,
 
 ## Chapters
 
-| #   | Topic                         | Project         |
-| --- | ----------------------------- | --------------- |
-| 01  | [Selectors](./css-selectors/) | Product Card UI |
-| 02  | [Nesting](./css-nesting/)     | Navbar UI       |
+| #   | Topic                             | Project         |
+| --- | --------------------------------- | --------------- |
+| 01  | [Selectors](./css-selectors/)     | Product Card UI |
+| 02  | [Nesting](./css-nesting/)         | Navbar UI       |
+| 03  | [Specificity](./css-specificity/) | Blog post page  |
 
 ## Goal
 

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Specificity</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main id="blog">
+      <article class="post featured">
+        <span class="tag" data-topic="css">CSS</span>
+        <h2>Understanding the Cascade</h2>
+        <p class="meta">
+          By <a href="#" class="read-more">Darshan</a> · 5 min read
+        </p>
+        <p>
+          CSS is a language that styles the web. The cascade determines which
+          rules apply.
+        </p>
+        <a href="#" class="read-more">Read More</a>
+      </article>
+
+      <article class="post">
+        <span class="tag" data-topic="javascript">JavaScript</span>
+        <h2>Event Loop Explained</h2>
+        <p class="meta">By <a href="#">Darshan</a> · 8 min read</p>
+        <p>
+          The event loop is what allows JavaScript to perform non-blocking
+          operations.
+        </p>
+        <a href="#" class="read-more">Read More</a>
+        <a href="#">Standalone link</a>
+      </article>
+
+      <article class="post draft">
+        <span class="tag" data-topic="typescript">TypeScript</span>
+        <h2>Generics in TypeScript</h2>
+        <p class="meta">By <a href="#">Darshan</a> · 6 min read</p>
+        <p>Generics allow you to write reusable, type-safe code.</p>
+        <a href="#" class="read-more" disabled>Read More</a>
+      </article>
+    </main>
+  </body>
+</html>
