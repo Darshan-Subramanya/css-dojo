@@ -1,0 +1,74 @@
+:root {
+  --color-bg: hsl(0 0% 98%);
+  --color-card: hsl(0 0% 100%);
+  --color-text: hsl(0 0% 15%);
+  --color-muted: hsl(0 0% 50%);
+  --color-accent: hsl(240 80% 60%);
+}
+
+/* CSS custom properties for colors */
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: sans-serif;
+  margin: 20px;
+  padding: 10px;
+  /* Font size in rem, line-height ratio */
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.card {
+  background: var(--color-card);
+  border: 2px solid var(--color-accent);
+  padding: 20px;
+}
+.bio {
+  color: var(--color-muted);
+  /* Bio max-width in ch */
+  max-width: 70ch;
+}
+a {
+  color: var(--color-accent);
+}
+
+/* HSL colors for tags */
+.tag[data-topic="css"] {
+  background: hsl(74, 80%, 60%); /* blue */
+}
+.tag[data-topic="typescript"] {
+  background: hsl(119, 70%, 50%); /* steel blue */
+}
+.tag[data-topic="react"] {
+  background: hsl(190 90% 45%); /* cyan */
+}
+
+/* avatar size in vh */
+/* 12vh = 12% of viewport height — avatar scales with screen size */
+.avatar {
+  width: 12vh;
+  height: 12vh;
+  border-radius: 50%; /* makes it circular */
+}
+
+/* Let border inherit */
+/* socials links don't inherit border by default */
+.socials {
+  border: inherit; /* border from .card */
+  display: inline-block;
+}
+
+.socials a {
+  /* Use unset to reset a style */
+  /* a { color: var(--color-accent) } is set globally */
+  color: unset; /* color inherits → gets --color-text from body */
+}
+/* Set */
+.tag {
+  font-size: 2rem;     /* set it big first */
+  font-weight: 900;    /* set it bold */
+}
+/* now unset */
+.tag {
+  font-size: unset;    /* no inherited value → resets to initial → medium */
+  font-weight: unset;  /* inherited → gets from body → normal */
+}
