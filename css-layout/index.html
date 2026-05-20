@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Darshan — Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Challenge 1 & 2: Sticky header, flex nav -->
+    <header class="header">
+      <div class="logo">darshan.</div>
+      <nav class="nav">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+      </nav>
+    </header>
+
+    <!-- Challenge 3: Flexbox centering -->
+    <section class="hero">
+      <h1>Hi, I'm Darshan</h1>
+      <p>I build things for the web.</p>
+      <a href="#projects" class="btn">See my work</a>
+    </section>
+
+    <!-- Challenge 4, 5, 6: Grid, absolute badge, subgrid -->
+    <section class="projects" id="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="card">
+          <span class="badge">Live</span>
+          <img src="https://placehold.co/400x200" alt="Project 1" />
+          <h3>Project One</h3>
+          <p>
+            A short description of what this project does and the stack used.
+          </p>
+          <a href="#" class="card-link">View project →</a>
+        </div>
+
+        <div class="card">
+          <span class="badge">Live</span>
+          <img src="https://placehold.co/400x200" alt="Project 2" />
+          <h3>Project Two</h3>
+          <p>
+            A short description of what this project does and the stack used.
+          </p>
+          <a href="#" class="card-link">View project →</a>
+        </div>
+
+        <div class="card">
+          <img src="https://placehold.co/400x200" alt="Project 3" />
+          <h3>Project Three</h3>
+          <p>A short description.</p>
+          <a href="#" class="card-link">View project →</a>
+        </div>
+
+        <div class="card">
+          <span class="badge">Live</span>
+          <img src="https://placehold.co/400x200" alt="Project 4" />
+          <h3>Project Four</h3>
+          <p>A short description of what this project does.</p>
+          <a href="#" class="card-link">View project →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Challenge 7: grid-template-areas -->
+    <section class="skills" id="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skills-languages">
+          <h3>Languages</h3>
+          <ul>
+            <li>TypeScript</li>
+            <li>Golang</li>
+            <li>CSS</li>
+          </ul>
+        </div>
+        <div class="skills-tools">
+          <h3>Tools</h3>
+          <ul>
+            <li>React</li>
+            <li>Git</li>
+            <li>Figma</li>
+          </ul>
+        </div>
+        <div class="skills-currently">
+          <h3>Currently Learning</h3>
+          <ul>
+            <li>CSS Grid</li>
+            <li>Golang concurrency</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Challenge 8: multicolumn -->
+    <section class="about" id="about">
+      <h2>About</h2>
+      <div class="about-text">
+        <p>
+          I'm a developer based in Bengaluru who loves building clean, fast web
+          experiences. I'm currently working through the web.dev Learn CSS
+          course to sharpen my fundamentals.
+        </p>
+        <p>
+          When I'm not coding, I'm probably reading about systems design,
+          exploring new tools, or obsessing over typograpy and layout details
+          most people never notice.
+        </p>
+        <p>
+          I believe good CSS is invisible — it just works, looks right, and gets
+          out of the way. That's what I'm chasing.
+        </p>
+        <p>
+          Open to interesting projects and conversations. If something here
+          resonates, reach out.
+        </p>
+      </div>
+    </section>
+
+    <!-- Challenge 9: Flexbox footer -->
+    <footer class="footer">
+      <div class="footer-brand">darshan.</div>
+      <div class="footer-links">
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter</a>
+      </div>
+      <div class="footer-copy">© 2026 Darshan</div>
+    </footer>
+  </body>
+</html>
