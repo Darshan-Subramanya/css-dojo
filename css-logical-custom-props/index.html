@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logical & Custom Properties</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Toggles -->
+    <div class="controls">
+      <button id="dir-toggle">Switch to RTL</button>
+      <button id="theme-toggle">Switch to Dark</button>
+    </div>
+
+    <!-- Profile Card -->
+    <main class="page">
+      <div class="card">
+        <div class="card-avatar">DS</div>
+
+        <div class="card-body">
+          <h1 class="card-name">Darshan</h1>
+          <p class="card-role">Frontend Developer</p>
+          <p class="card-bio">
+            Building things for the web. Currently learning CSS systematically
+            through web.dev. Based in Bengaluru.
+          </p>
+          <div class="card-tags">
+            <span class="tag">TypeScript</span>
+            <span class="tag">React</span>
+            <span class="tag">Golang</span>
+            <span class="tag">CSS</span>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <a href="#" class="btn">View Portfolio</a>
+          <a href="#" class="btn btn-outline">Contact</a>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const dirToggle = document.getElementById("dir-toggle");
+      const themeToggle = document.getElementById("theme-toggle");
+      const html = document.documentElement;
+
+      dirToggle.addEventListener("click", () => {
+        const isLTR = html.getAttribute("dir") === "ltr";
+        html.setAttribute("dir", isLTR ? "rtl" : "ltr");
+        dirToggle.textContent = isLTR ? "Switch to LTR" : "Switch to RTL";
+      });
+
+      themeToggle.addEventListener("click", () => {
+        const isDark = html.dataset.theme === "dark";
+        html.dataset.theme = isDark ? "light" : "dark";
+        themeToggle.textContent = isDark ? "Switch to Dark" : "Switch to Light";
+      });
+    </script>
+  </body>
+</html>
