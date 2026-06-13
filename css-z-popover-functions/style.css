@@ -1,0 +1,88 @@
+var {
+    --z-sticky: 100;
+}
+
+/*Sticky header that stays above page content*/
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky); /* or just z-index: 100 */
+}
+
+/*Tooltip that appears above a card badge*/
+.card {
+    position: relative;
+    isolation: isolate; /* contains stacking context without side effects */
+}
+
+.card__tooltip {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background: #333;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/*Dropdown menu anchored to a button*/
+#menu-btn {
+    anchor-name: --menu-btn;
+}
+
+#dropdown-menu {
+    position: fixed;
+    position-anchor: --menu-btn;
+    position-area: bottom left;
+    margin-top: 4px;
+}
+
+/*Dropdown auto-flips if it overflows viewport*/
+#dropdown-menu {
+    position-try-fallbacks: flip-block, flip-inline;
+}
+
+/*Notification toast using popover="manual"*/
+#toast {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background: #333;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/*Confirmation modal using <dialog>*/
+dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/*Fluid heading that scales with viewport*/
+h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+/*Card width that never overflows but caps at max*/
+.card {
+    width: min(100%, 300px);
+}
+
+/*Spacing that grows but never shrinks below base*/
+.card {
+    padding: max(1rem, 2vw);
+}
+
+/*Gap calculated from available space minus padding*/
+.card-grid {
+    gap: calc(1rem + 1vw);
+}
