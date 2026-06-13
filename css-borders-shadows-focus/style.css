@@ -1,0 +1,64 @@
+/*Cards with rounded corners, dashed border on the "free" tier*/
+.card {
+    border-radius: 10px;
+    border: 2px solid #ccc;
+}
+
+.card--free {
+    border-style: dashed;
+}
+
+/*Gradient border on the "pro" tier*/
+.card--pro {
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, #ff6ec4, #7873f5) 1;
+}
+
+/*Soft elevation shadow on each card*/
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/*Inset shadow on the active/selected card*/
+.card.active {
+    box-shadow: inset 0 0 0 2px #7873f5;
+}
+
+/*Drop shadow on a logo/icon PNG*/
+.card__icon {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+/*Heading with a text shadow*/
+h2 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/*"Most Popular" badge with multiple layered shadows*/
+.card__badge {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*CTA button with clear :focus-visible ring + outline-offset*/
+.btn:focus-visible {
+    outline: 2px solid #7873f5;
+    outline-offset: 4px;
+}
+
+/*Disabled button shows not-allowed cursor*/
+.btn:disabled {
+    cursor: not-allowed;
+}
+
+/*Clickable cards show pointer cursor*/
+.card:hover {
+    cursor: pointer;
+}
+
+/*Coarse pointer devices (touch) get larger tap targets*/
+@media (pointer: coarse) {
+    .btn {
+        min-height: 48px;
+        padding: 12px 24px;
+    }
+}
