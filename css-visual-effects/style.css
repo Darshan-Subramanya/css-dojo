@@ -1,0 +1,83 @@
+.card__img {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: clip-path 400ms ease, filter 400ms ease;
+    filter: grayscale(1);
+}
+
+.card__img:hover {
+    clip-path: polygon(50% 10%, 90% 30%, 90% 70%, 50% 90%, 10% 70%, 10% 30%);
+    filter: grayscale(0);
+}
+
+.card__img-wrap {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    linear-gradient(135deg, #667eea, #764ba2);
+    background-size: cover;
+    padding: 6rem 2rem;
+}
+
+/* conic-gradient goes on background */
+.stat__chart {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(#7873f5 0deg 270deg, #eee 270deg 360deg);
+}
+
+/* repeating-linear-gradient also goes on background */
+.stripe-banner {
+    background: repeating-linear-gradient(
+            45deg,
+            #7873f5 0px,
+            #7873f5 10px,
+            white 10px,
+            white 20px
+    );
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.card__badge {
+    animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.card {
+    animation: slideIn 0.5s ease forwards;
+}
+
+.hero__overlay {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none;
+        transition: none;
+    }
+}
