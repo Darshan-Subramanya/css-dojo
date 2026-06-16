@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Blog Layout</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- Hero with parallax background -->
+<section class="hero">
+    <div class="hero__content">
+        <h1 class="hero__title">The CSS Deep Dive</h1>
+        <p class="hero__sub">Overflow, backgrounds, typography, and container queries.</p>
+    </div>
+</section>
+
+<!-- Main layout -->
+<div class="layout">
+
+    <!-- Article feed -->
+    <main class="feed">
+
+        <!-- Truncated card -->
+        <article class="card">
+            <div class="card__body">
+                <h2 class="card__title">This is a very long article title that should be truncated with an ellipsis when
+                    it overflows its container</h2>
+                <p class="card__meta">June 16, 2026 · 8 min read</p>
+                <p class="card__excerpt">Container queries are one of the most powerful additions to CSS in recent
+                    years. They allow components to respond to their own size rather than the viewport.</p>
+            </div>
+        </article>
+
+        <!-- Scrollable code block -->
+        <article class="card">
+            <div class="card__body">
+                <h2 class="card__title">Understanding CSS Specificity</h2>
+                <p class="card__meta">May 30, 2026 · 5 min read</p>
+                <pre class="code-block">
+.a .b .c .d .e .f .g { color: red; } /* specificity: 0,7,0 */
+#hero > .container + .sidebar ~ .widget[data-active="true"]:hover::before { content: ""; }
+/* This is a deliberately long line to demonstrate horizontal scrolling behavior in narrow containers */
+          </pre>
+            </div>
+        </article>
+
+        <!-- Comment with long URL -->
+        <article class="card">
+            <div class="card__body">
+                <h2 class="card__title">Reader Comments</h2>
+                <div class="comment">
+                    <p class="comment__author">Riya Mehta</p>
+                    <p class="comment__text">Great article! I found more info here:
+                        https://www.some-very-long-domain-name-that-goes-on-forever.com/articles/css/container-queries/deep-dive/everything-you-need-to-know/part-one</p>
+                </div>
+                <div class="comment">
+                    <p class="comment__author">Carlos Rivera</p>
+                    <p class="comment__text">Agreed. Also check:
+                        https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries/complete-reference-guide</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Gradient text card -->
+        <article class="card card--featured">
+            <div class="card__body">
+                <h2 class="card__title--gradient">CSS is an Art Form</h2>
+                <p class="card__excerpt">Modern CSS gives designers superpowers. From blend modes to container queries,
+                    the platform has never been more expressive.</p>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <!-- Narrow container — card adapts -->
+        <div class="sidebar__section">
+            <h3 class="sidebar__heading">Trending</h3>
+            <div class="widget-container">
+                <div class="widget">
+                    <img src="https://placehold.co/400x200" alt="Article" class="widget__img"/>
+                    <div class="widget__body">
+                        <h4 class="widget__title">Container Queries in Production</h4>
+                        <p class="widget__meta">2.4k reads</p>
+                    </div>
+                </div>
+                <div class="widget">
+                    <img src="https://placehold.co/400x200" alt="Article" class="widget__img"/>
+                    <div class="widget__body">
+                        <h4 class="widget__title">Fluid Typography with clamp()</h4>
+                        <p class="widget__meta">1.8k reads</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Multi-layer background section -->
+        <div class="sidebar__section promo">
+            <h3 class="promo__title">Go Pro</h3>
+            <p class="promo__text">Unlock all articles, code examples, and live demos.</p>
+            <button class="btn">Upgrade</button>
+        </div>
+
+    </aside>
+
+</div>
+
+<!-- Horizontal scroll carousel -->
+<section class="carousel-section">
+    <h2 class="section__title">Latest Series</h2>
+    <div class="carousel">
+        <div class="carousel__item">
+            <span class="carousel__label">Episode 1</span>
+            <p class="carousel__title">The Box Model</p>
+        </div>
+        <div class="carousel__item">
+            <span class="carousel__label">Episode 2</span>
+            <p class="carousel__title">Flexbox Deep Dive</p>
+        </div>
+        <div class="carousel__item">
+            <span class="carousel__label">Episode 3</span>
+            <p class="carousel__title">Grid Mastery</p>
+        </div>
+        <div class="carousel__item">
+            <span class="carousel__label">Episode 4</span>
+            <p class="carousel__title">Custom Properties</p>
+        </div>
+        <div class="carousel__item">
+            <span class="carousel__label">Episode 5</span>
+            <p class="carousel__title">Container Queries</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
