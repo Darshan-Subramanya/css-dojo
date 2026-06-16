@@ -1,0 +1,161 @@
+/*Photo with a color gradient blended over it*/
+.hero {
+    position: relative;
+    background: linear-gradient(135deg, purple, blue), url('https://placehold.co/1200x400');
+    background-blend-mode: multiply;
+    background-size: cover;
+}
+
+/*Text heading blended into a background image*/
+.hero__title {
+    background: linear-gradient(135deg, #ff6ec4, #7873f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/*Duotone effect on a card image*/
+.duotone-card {
+    position: relative;
+    isolation: isolate;
+}
+
+.duotone-card__img {
+    filter: grayscale(1);
+    display: block;
+    width: 100%;
+}
+
+.duotone-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #e66465, #9198e5);
+    mix-blend-mode: color;
+}
+
+/*Custom bullet list with ::marker content*/
+.list--custom {
+    list-style: none;
+    padding: 0;
+}
+
+.list--custom li::before {
+    content: '→ ';
+    color: #7873f5;
+    margin-right: 0.5rem;
+}
+
+/*.list--custom li::marker {*/
+/*    content: '→ ';*/
+/*    color: #7873f5;*/
+/*}*/
+
+/*Styled ordered list — no default numbers*/
+.list--steps {
+    list-style: none;
+    counter-reset: steps;
+}
+
+.list--steps > li::before {
+    counter-increment: steps;
+    content: counter(steps) '. ';
+}
+
+/*Auto-numbered section headings*/
+.releases {
+    counter-reset: section;
+}
+
+.release__version::before {
+    counter-increment: section;
+    content: 'v' counter(section) ' — ';
+    color: #7873f5;
+}
+
+/*Nested counters for sub-steps*/
+.list--substeps {
+    counter-reset: steps;
+}
+
+.list--substeps li::before {
+    counter-increment: steps;
+    content: counters(steps, '.') ' ';
+}
+
+/*Button hover with eased transition*/
+.btn {
+    transition: transform 200ms ease, background 200ms ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/*Staggered list item fade-in on load*/
+.list--custom li {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.list--custom li:nth-child(1) {
+    animation-delay: 0ms;
+}
+
+.list--custom li:nth-child(2) {
+    animation-delay: 100ms;
+}
+
+.list--custom li:nth-child(3) {
+    animation-delay: 200ms;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*SPA-style page swap with crossfade*/
+::view-transition-old(root) {
+    animation: fade-out 300ms ease;
+}
+
+::view-transition-new(root) {
+    animation: fade-in 300ms ease;
+}
+
+@keyframes fade-out {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+}
+
+/*Named view transition on a hero element*/
+.hero__title {
+    view-transition-name: hero-title;
+}
+
+/*Reduced motion fallback for transitions*/
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none;
+    }
+}

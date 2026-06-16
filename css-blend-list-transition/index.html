@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Changelog</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- SPA nav -->
+<nav class="nav">
+    <button class="nav__btn nav__btn--active" data-page="changelog">Changelog</button>
+    <button class="nav__btn" data-page="roadmap">Roadmap</button>
+    <button class="nav__btn" data-page="team">Team</button>
+</nav>
+
+<!-- Page container (swapped by JS) -->
+<main class="main" id="page-root">
+
+    <!-- CHANGELOG PAGE -->
+    <div class="page" id="changelog">
+
+        <!-- Blended hero -->
+        <div class="hero">
+            <img src="https://placehold.co/1200x400" alt="Hero" class="hero__img"/>
+            <h1 class="hero__title">What's New</h1>
+        </div>
+
+        <!-- Auto-numbered sections -->
+        <div class="releases">
+
+            <section class="release">
+                <h2 class="release__version">v3.0 — Major Release</h2>
+                <p class="release__date">June 2026</p>
+
+                <h3 class="release__sub">Highlights</h3>
+                <ul class="list list--custom">
+                    <li>Full dark mode support</li>
+                    <li>Redesigned dashboard</li>
+                    <li>Performance improvements</li>
+                </ul>
+
+                <h3 class="release__sub">Migration Steps</h3>
+                <ol class="list list--steps">
+                    <li>
+                        Update dependencies
+                        <ol class="list list--substeps">
+                            <li>Run npm install</li>
+                            <li>Check peer dependencies</li>
+                        </ol>
+                    </li>
+                    <li>Update config files</li>
+                    <li>Test in staging</li>
+                    <li>Deploy to production</li>
+                </ol>
+            </section>
+
+            <section class="release">
+                <h2 class="release__version">v2.5 — Feature Update</h2>
+                <p class="release__date">March 2026</p>
+
+                <h3 class="release__sub">New Features</h3>
+                <ul class="list list--custom">
+                    <li>API rate limiting controls</li>
+                    <li>Webhook support</li>
+                    <li>CSV export</li>
+                </ul>
+
+                <!-- Duotone card -->
+                <div class="duotone-card">
+                    <img src="https://placehold.co/600x200" alt="Feature preview" class="duotone-card__img"/>
+                    <p class="duotone-card__label">Feature Preview</p>
+                </div>
+            </section>
+
+            <section class="release">
+                <h2 class="release__version">v2.0 — Stable</h2>
+                <p class="release__date">December 2025</p>
+
+                <h3 class="release__sub">Bug Fixes</h3>
+                <ul class="list list--custom">
+                    <li>Fixed memory leak in renderer</li>
+                    <li>Resolved auth token expiry bug</li>
+                    <li>Patched XSS vulnerability</li>
+                </ul>
+
+                <button class="btn">Download v2.0</button>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- ROADMAP PAGE -->
+    <div class="page page--hidden" id="roadmap">
+        <div class="hero hero--alt">
+            <img src="https://placehold.co/1200x400" alt="Roadmap" class="hero__img"/>
+            <h1 class="hero__title">Roadmap</h1>
+        </div>
+        <div class="releases">
+            <section class="release">
+                <h2 class="release__version">Q3 2026</h2>
+                <ul class="list list--custom">
+                    <li>AI-powered search</li>
+                    <li>Mobile app launch</li>
+                    <li>Plugin marketplace</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <!-- TEAM PAGE -->
+    <div class="page page--hidden" id="team">
+        <div class="hero hero--alt">
+            <img src="https://placehold.co/1200x400" alt="Team" class="hero__img"/>
+            <h1 class="hero__title">The Team</h1>
+        </div>
+        <div class="releases">
+            <section class="release">
+                <h2 class="release__version">Core Contributors</h2>
+                <ul class="list list--custom">
+                    <li>Aiko Tanaka — Design</li>
+                    <li>Riya Mehta — Engineering</li>
+                    <li>Carlos Rivera — DevRel</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+</main>
+
+<script>
+    const buttons = document.querySelectorAll('.nav__btn');
+    const pages = document.querySelectorAll('.page');
+
+    function showPage(pageId) {
+        const update = () => {
+            pages.forEach(p => p.classList.add('page--hidden'));
+            document.getElementById(pageId).classList.remove('page--hidden');
+            buttons.forEach(b => b.classList.remove('nav__btn--active'));
+            document.querySelector(`[data-page="${pageId}"]`).classList.add('nav__btn--active');
+        };
+
+        if (!document.startViewTransition) {
+            update();
+        } else {
+            document.startViewTransition(update);
+        }
+    }
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => showPage(btn.dataset.page));
+    });
+</script>
+
+</body>
+</html>
